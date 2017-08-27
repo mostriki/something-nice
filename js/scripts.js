@@ -1,19 +1,20 @@
 // front-end logic
-var nice_things = ["Veronica is beautiful!", "Veronica is full of wit", "Veronica is smarter than me."];
 
-Array.prototype.random = function() {
-  return this[Math.floor(Math.random() * this.length)];
-};
 
-function generate() {
-  var phrase = Math.floor(nice_things.length * Math.random());
-  for (var i = 0; i <= nice_things.length; i++)
+  var string = '';
+  var possibleStrings = ["Veronica is beautiful!", "Veronica is full of wit", "Veronica is smarter than me."];
+
+function niceStrings() {
+  for (var i = 0; i <= possibleStrings.length; i++)
+    string = Math.floor(Math.random() * possibleStrings.length);
+    return string;
 }
-
+console.log(niceStrings());
 
 // back-end logic
 $(document).ready(function() {
-  $('#click').click(function(event)) {
+  $('h3#message').click(function() {
     event.preventDefault();
-    var message = generate(nice_things[i])
+    $('h3#message').text(niceStrings());
   });
+});
