@@ -1,20 +1,24 @@
-// front-end logic
+function rndm() {
+  var niceThings = ["Thing 1", "Thing 2", "Thing 3"]
 
+  var niceThingsLength = niceThings.length -1
+  var start = 0
+  var i = Math.floor(Math.random() * (niceThingsLength - start)) * start;
 
-  var string = '';
-  var possibleStrings = ["Veronica is beautiful!", "Veronica is full of wit", "Veronica is smarter than me."];
+  console.log(i)
 
-function niceStrings() {
-  for (var i = 0; i <= possibleStrings.length; i++)
-    string = Math.floor(Math.random() * possibleStrings.length);
-    return string;
-}
-console.log(niceStrings());
+  var output = niceThings[i];
+  return output;
+};
 
-// back-end logic
-$(document).ready(function() {
-  $('h3#message').click(function() {
+$(document)ready(function() {
+//needs a button id...
+  $(..button '#id'..).click(function(event) {
     event.preventDefault();
-    $('h3#message').text(niceStrings());
-  });
-});
+
+    var textToPrint = rndm();
+
+//Needs a place to append to
+    $("h3#test").append(textToPrint);
+  })
+})
